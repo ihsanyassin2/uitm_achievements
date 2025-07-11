@@ -1,0 +1,258 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Light grayish background */
+    color: #333;
+    line-height: 1.6;
+    padding-top: 70px; /* Adjust if navbar height changes */
+}
+
+.container {
+    max-width: 1140px; /* Standard Bootstrap container max-width for lg breakpoint */
+}
+
+/* Navbar */
+.navbar-brand img {
+    max-height: 40px; /* Adjust logo height */
+    margin-right: 10px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #fff;
+}
+.navbar-primary { /* Custom class for primary theme color */
+    background-color: #0056b3; /* Example primary color (dark blue) */
+}
+
+
+/* Sidebar */
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 0.25rem;
+    margin-bottom: 20px; /* Space below sidebar if content follows */
+}
+.list-group-item.active {
+    background-color: #0056b3; /* Match navbar primary */
+    border-color: #0056b3;
+    color: #fff;
+}
+.list-group-item-action:hover, .list-group-item-action:focus {
+    background-color: #e9ecef; /* Light hover for sidebar items */
+}
+.list-group i.fa-fw { /* Fixed width icons in sidebar */
+    margin-right: 8px;
+}
+
+/* Cards */
+.card {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.card-header {
+    background-color: #e9ecef; /* Light gray card header */
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+}
+.btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+.btn-primary:hover {
+    background-color: #004494;
+    border-color: #003f87;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 0.25rem;
+}
+
+/* Footer */
+.footer {
+    padding: 20px 0;
+    background-color: #343a40; /* Dark footer */
+    color: #f8f9fa; /* Light text for dark footer */
+    font-size: 0.9em;
+}
+.footer img {
+    opacity: 0.8;
+}
+
+/* Utility Classes */
+.icon-text { /* For text next to an icon */
+    display: inline-flex;
+    align-items: center;
+}
+.icon-text .fas, .icon-text .far, .icon-text .fab {
+    margin-right: 0.5em;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px; /* Adjust for smaller navbar */
+    }
+    .sidebar {
+        margin-top: 15px; /* Add some space above sidebar on small screens if navbar is fixed */
+    }
+}
+
+/* Specific page styling can be added here or in separate files */
+
+/* Example: Achievement display styling */
+.achievement-card {
+    /* custom styles */
+}
+.achievement-card .achievement-image {
+    max-height: 200px;
+    object-fit: cover;
+}
+.achievement-meta {
+    font-size: 0.85em;
+    color: #6c757d;
+}
+.achievement-actions a {
+    margin-right: 10px;
+}
+
+/* Login/Register Page Specifics */
+.auth-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.auth-container h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #0056b3;
+}
+.auth-container .form-group label {
+    font-weight: 600;
+}
+.auth-container .btn-block {
+    padding: 10px;
+    font-size: 1.1em;
+}
+.auth-container .text-center a {
+    color: #0056b3;
+    text-decoration: none;
+}
+.auth-container .text-center a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard styling */
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+.dashboard-stat-card {
+    text-align: center;
+    padding: 1.5rem;
+}
+.dashboard-stat-card .stat-icon {
+    font-size: 3rem;
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+}
+.dashboard-stat-card .stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.dashboard-stat-card .stat-label {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* Table styling */
+.table th {
+    background-color: #e9ecef;
+}
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+.table .action-icons a {
+    margin: 0 5px;
+    color: #0056b3;
+}
+.table .action-icons a.text-danger:hover {
+    color: #c82333 !important;
+}
+.table .action-icons a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+/* Profile Page */
+.profile-header {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+}
+.profile-links a {
+    display: block;
+    margin-bottom: 5px;
+    color: #0056b3;
+}
+.profile-links a i {
+    margin-right: 8px;
+}
+
+/* Feedback/Chat like mechanism */
+.chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.message {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+.message.sent {
+    background-color: #007bff; /* Bootstrap primary */
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+.message.received {
+    background-color: #e9ecef; /* Light gray */
+    color: #333;
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+}
+.message-meta {
+    font-size: 0.75em;
+    color: #6c757d;
+    margin-top: 3px;
+}
+.message.sent .message-meta {
+    text-align: right;
+    color: rgba(255,255,255,0.7);
+}
+.message.received .message-meta {
+    text-align: left;
+}
+
+#chat-input textarea {
+    resize: none;
+}

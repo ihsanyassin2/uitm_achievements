@@ -1,0 +1,19 @@
+This directory is the main container for all user-uploaded files.
+Subdirectories like 'images/', 'documents/' (if needed), etc., should be created inside here.
+
+Security Considerations:
+- Ensure this directory and its subdirectories are writable by the web server process.
+- However, these directories should NOT be directly web-accessible if they contain sensitive files or if there's a risk of script execution.
+- For images meant to be displayed, the 'images' subdirectory can be web-accessible, but ensure proper file validation and sanitization are in place for all uploads.
+- Consider using a .htaccess file (for Apache) or equivalent server configuration to prevent script execution within upload directories.
+  Example .htaccess for 'uploads/images/':
+  ```
+  <FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|cgi|sh|exe)$">
+      Order Allow,Deny
+      Deny from all
+  </FilesMatch>
+  ```
+- Do not store uploaded files with their original user-provided filenames directly. Generate unique, sanitized filenames to prevent various attacks (e.g., directory traversal, file inclusion).
+- Validate file types on both client-side (JavaScript) and server-side (PHP).
+- Check MIME types on the server-side, not just file extensions.
+- Set appropriate file size limits.

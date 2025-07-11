@@ -1,0 +1,11 @@
+This directory is for storing uploaded images related to achievements.
+Ensure this directory is writable by the web server.
+Consider creating subdirectories (e.g., by year/month or by user ID) if many images are expected, to keep it organized.
+Example: /uploads/images/2023/11/image.jpg
+         /uploads/images/user_123/image.jpg
+
+Also, implement security measures:
+1. Validate file types (allow only jpg, png, gif, etc.).
+2. Sanitize filenames.
+3. Limit file sizes.
+4. Do not allow execution of scripts in this directory (e.g., via .htaccess if on Apache).

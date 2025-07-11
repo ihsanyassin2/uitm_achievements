@@ -1,0 +1,7 @@
+This directory is for CRUD (Create, Read, Update, Delete) interface files.
+Each file (e.g., crud_users.php, crud_achievements.php) will manage a specific database table.
+These interfaces should provide:
+- List view with search and filter capabilities.
+- Forms for creating new records.
+- Forms for editing existing records.
+- Functionality to delete records (with confirmation).

@@ -1,0 +1,18 @@
+-- Table structure for table `users`
+CREATE TABLE `users` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL UNIQUE,
+  `password` VARCHAR(255) NOT NULL,
+  `phone_number` VARCHAR(50) DEFAULT NULL,
+  `biography` TEXT DEFAULT NULL,
+  `cv_link` VARCHAR(255) DEFAULT NULL,
+  `google_scholar_link` VARCHAR(255) DEFAULT NULL,
+  `linkedin_link` VARCHAR(255) DEFAULT NULL,
+  `scopus_link` VARCHAR(255) DEFAULT NULL,
+  `isi_link` VARCHAR(255) DEFAULT NULL,
+  `orcid_link` VARCHAR(255) DEFAULT NULL,
+  `role` ENUM('user', 'admin') NOT NULL DEFAULT 'user',
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
