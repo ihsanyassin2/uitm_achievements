@@ -1,0 +1,246 @@
+/* style.css */
+/* Custom styles for UiTM Achievements Portal */
+
+body {
+    padding-top: 56px; /* Height of the fixed navbar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 56px; /* Adjust if navbar height changes */
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 0; /* Remove padding */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    background-color: #e9ecef; /* Slightly darker grey for sidebar */
+}
+
+.sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 56px; /* Height of navbar, so it starts below it */
+    height: calc(100vh - 56px); /* Full height minus navbar */
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+    padding: .75rem 1.5rem; /* More padding for better touch targets */
+}
+
+.sidebar .nav-link .fa-fw {
+    width: 1.25em; /* Ensure icons align nicely */
+    margin-right: 8px;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff; /* Bootstrap primary color for active link */
+    background-color: #d1e7ff; /* Light blue background for active item */
+    border-left: 3px solid #007bff;
+}
+
+.sidebar .nav-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    background-color: #e2e6ea;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+    padding: .5rem 1.5rem;
+    margin-top: 1rem;
+    color: #6c757d; /* Muted text color */
+}
+
+/* Main content area */
+main {
+    padding-top: 24px; /* Space below navbar/header */
+}
+
+/* Navbar customization */
+.navbar-brand img {
+    margin-right: 8px;
+}
+.bg-primary { /* UiTM Corporate Color - Example, adjust as needed */
+    background-color: #0047AB !important; /* Dark blue - adjust to UiTM's primary color */
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.85);
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #fff;
+}
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show > .nav-link {
+    color: #fff;
+    /* background-color: rgba(255, 255, 255, 0.1); Optional: subtle background for active link */
+}
+
+
+/* Footer */
+.footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: #f8f9fa;
+    padding: 1rem 0;
+    font-size: 0.9em;
+}
+.footer a {
+    color: #adb5bd;
+}
+.footer a:hover {
+    color: #f8f9fa;
+}
+
+/* Cards for achievements */
+.achievement-card {
+    margin-bottom: 20px;
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,.15);
+}
+.card-img-top-container {
+    width: 100%;
+    height: 200px; /* Fixed height for image container */
+    overflow: hidden; /* Crop images that don't fit */
+    background-color: #eee; /* Placeholder background */
+}
+.card-img-top-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Scale image to cover container, cropping if necessary */
+}
+.card-title a {
+    color: #0047AB; /* UiTM blue for titles */
+    text-decoration: none;
+}
+.card-title a:hover {
+    text-decoration: underline;
+}
+.card-text {
+    font-size: 0.9rem;
+    color: #555;
+}
+.card-footer {
+    background-color: #f8f9fa;
+    font-size: 0.8rem;
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: #0047AB;
+    box-shadow: 0 0 0 0.2rem rgba(0, 71, 171, 0.25);
+}
+.btn-primary {
+    background-color: #0047AB;
+    border-color: #0047AB;
+}
+.btn-primary:hover {
+    background-color: #00337A;
+    border-color: #00337A;
+}
+
+/* Alerts */
+.alert {
+    margin-top: 15px;
+}
+
+/* Utility classes */
+.icon-lg {
+    font-size: 2rem;
+}
+.text-uitm-blue {
+    color: #0047AB !important;
+}
+
+/* Login/Register page specific styles */
+.auth-container {
+    min-height: calc(100vh - 56px - 70px); /* Full height minus navbar and footer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+.auth-card .logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 100px;
+}
+
+/* Character counter for textareas */
+.char-count {
+    font-size: 0.8em;
+    margin-top: -10px; /* Adjust as needed to position it nicely */
+    margin-bottom: 10px;
+}
+
+/* Image preview styles */
+.image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    display: none; /* Hidden by default */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px; /* Navbar height */
+    }
+    .sidebar {
+        top: 56px; /* Start below navbar */
+        height: auto; /* Allow it to be scrollable with page */
+        position: relative; /* Make it part of the flow on small screens after toggle */
+        /* width: 100%; */ /* Take full width when toggled open */
+        /* box-shadow: none; */ /* Remove side shadow */
+    }
+    .sidebar-sticky {
+        height: auto;
+        position: relative;
+        top:0;
+    }
+    main {
+        /* padding-left: 0; If sidebar is not fixed/overlay */
+    }
+    .auth-card {
+        margin: 20px auto;
+    }
+}
+
+/* Ensure content in main area is not obscured by fixed sidebar on larger screens */
+@media (min-width: 768px) {
+    main.col-md-9.ml-sm-auto.col-lg-10 { /* Specificity for when sidebar is present */
+        /* padding-left: 20px; /* Adjust if needed based on sidebar width */
+    }
+}
+
+/* For the public facing website, ensure the container is centered and not full-width */
+.public-container {
+    max-width: 1140px; /* Standard container width or your preference */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+```

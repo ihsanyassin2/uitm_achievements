@@ -1,0 +1,54 @@
+# Basic Security and Configuration for Apache
+
+# Disable directory browsing
+Options -Indexes
+
+# Deny access to sensitive files if they were ever exposed
+<FilesMatch "^\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+    Require all denied
+</FilesMatch>
+<Files config.php>
+    Require all denied
+</Files>
+<FilesMatch "^.*\.sql$">
+    Require all denied
+</FilesMatch>
+
+# Protect the db directory
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^db/ - [F,L]
+</IfModule>
+
+
+# Prevent script execution in uploads directory
+# This might need to be placed in uploads/.htaccess if more specific control is needed
+# or if the main .htaccess doesn't propagate well for this rule.
+<DirectoryMatch "^uploads/images/.*$">
+    <FilesMatch "\.(php|php[3457s]|phtml)$">
+        Require all denied
+    </FilesMatch>
+</DirectoryMatch>
+
+# PHP settings (can also be set in php.ini or user.ini)
+# এগুলো প্রোডাকশনে php.ini তে সেট করা ভালো
+# php_flag display_errors Off
+# php_value error_reporting E_ALL
+# php_flag log_errors On
+# php_value error_log /path/on/server/to/php_error.log
+
+# Default charset
+AddDefaultCharset UTF-8
+
+# Standard Rewrite for front controller (if we move to one later, e.g. for public/index.php handling all public routes)
+# For now, direct file access is used.
+# Example if public/ was the main entry for all non-admin/user URLs:
+#<IfModule mod_rewrite.c>
+#    RewriteEngine On
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteRule ^(.*)$ public/index.php?path=$1 [L,QSA]
+#</IfModule>
+
+# Ensure index.php is the default directory index file
+DirectoryIndex index.php
